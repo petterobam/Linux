@@ -9,7 +9,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "45.32.1.91",
+            "address": "your ip",
             "port": 19343,
             "users": [
               {
