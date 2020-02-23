@@ -1,3 +1,5 @@
 init/.vim/bundle/**
 init/.oh-my-zsh
 init/.java/jdk/**
+init/Python*
+init/Python*/**
