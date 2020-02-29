@@ -1,0 +1,7 @@
+[Unit]
+Description=idea license server
+[Service]
+ExecStart=/var/local/idea/IntelliJIDEALicenseServer_linux_amd64 -p 8666
+Restart=always
+RestartSec=10
+SyslogIdentifier=idea-license-log
