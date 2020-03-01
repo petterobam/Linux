@@ -27,8 +27,8 @@ echo "./idea.sh"
 
 # 如果你在初始化的时候没有创建启动图标
 # # 初始化启动图标到系统
-# echo "sed -i \"s/\[userHomePath\]/$basepath/g\" $basepath/idea.desktop"
-# sed -i "s/\[userHomePath\]/$basepath/g" $basepath/idea.desktop
+# echo "sed -i \"s#\[userHomePath\]#$basepath#g\" $basepath/idea.desktop"
+# sed -i "s#\[userHomePath\]#$basepath#g" $basepath/idea.desktop
 # echo "sudo $basepath/idea.desktop /usr/share/applications"
 # sudo cp $basepath/idea.desktop /usr/share/applications
 
