@@ -26,6 +26,8 @@ echo "chsh -s /bin/zsh"
 chsh -s /bin/zsh
 echo "sudo cp $basepath/.zshrc $userHomePath/"
 sudo cp $basepath/.zshrc $userHomePath/
+# 为 man 添加配色
+# sh init-man-color.sh
 echo "source ~/.zshrc"
 source ~/.zshrc
 echo "oh-my-zsh 配置结束"
