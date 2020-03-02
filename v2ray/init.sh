@@ -1,6 +1,9 @@
 # 当前文件所在目录
-basepath=$(cd `dirname $0`; pwd)
-cd $basepath
+SHELL_PATH=$(cd `dirname $0`; pwd)
+
+echo "cd $SHELL_PATH"
+cd $SHELL_PATH
+
 # 下载安装包
 # wget https://github.com/v2ray/v2ray-core/releases/download/v4.22.1/v2ray-linux-64.zip
 curl -OL https://github.com/v2ray/v2ray-core/releases/download/v4.22.1/v2ray-linux-64.zip
@@ -45,5 +48,5 @@ sudo systemctl start v2ray.service
 sudo systemctl enable v2ray.service
 
 # 桌面快捷键文件
-cd $basepath
-sudo mv v2ray.Desktop /usr/local/v2ray/
+cd $SHELL_PATH
+sudo cp $SHELL_PATH/v2ray.Desktop /usr/local/v2ray/

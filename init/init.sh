@@ -5,27 +5,30 @@ echo "1、期间安装软件可能需要输入密码；\n"
 echo "2、期间安装软件请确认是否需要安装；\n"
 
 # 个人 home 目录
-userHomePath=$(cd `~`; pwd)
-echo "当前用户 home 目录: $userHomePath"
+USER_HOME_PATH=$(cd `~`; pwd)
+echo "当前用户 home 目录: $USER_HOME_PATH"
 # 当前文件所在目录
-basepath=$(cd `dirname $0`; pwd)
-echo "当前 shell 文件目录: $basepath"
+SHELL_PATH=$(cd `dirname $0`; pwd)
+echo "当前 shell 文件目录: $SHELL_PATH"
+
+echo "cd $SHELL_PATH"
+cd $SHELL_PATH
 
 ## zsh
 echo "oh-my-zsh 配置..."
 echo "sudo apt-get install zsh"
 sudo apt-get install zsh
 # oh-my-zsh
-# cp -r $basepath/.oh-my-zsh/ $userHomePath/
-# git https://github.com/ohmyzsh/ohmyzsh.git $userHomePath/.oh-my-zsh
+# cp -r $SHELL_PATH/.oh-my-zsh/ $USER_HOME_PATH/
+# git https://github.com/ohmyzsh/ohmyzsh.git $USER_HOME_PATH/.oh-my-zsh
 # sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 echo "sh -c \"\$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # 默认 zsh
 echo "chsh -s /bin/zsh"
 chsh -s /bin/zsh
-echo "sudo cp $basepath/.zshrc $userHomePath/"
-sudo cp $basepath/.zshrc $userHomePath/
+echo "sudo cp $SHELL_PATH/.zshrc $USER_HOME_PATH/"
+sudo cp $SHELL_PATH/.zshrc $USER_HOME_PATH/
 # 为 man 添加配色
 # sh init-man-color.sh
 echo "source ~/.zshrc"
@@ -34,26 +37,26 @@ echo "oh-my-zsh 配置结束"
 
 # vim
 echo "vim配置..."
-echo "sudo cp -r $basepath/.vim/ $userHomePath/"
-sudo cp -r $basepath/.vim/ $userHomePath/
+echo "sudo cp -r $SHELL_PATH/.vim/ $USER_HOME_PATH/"
+sudo cp -r $SHELL_PATH/.vim/ $USER_HOME_PATH/
 # bundle 插件检出
-echo "git clone https://github.com/davidhalter/jedi.git $userHomePath/.vim/bundle/jedi/"
-git clone https://github.com/davidhalter/jedi.git $userHomePath/.vim/bundle/jedi/
-echo "git clone https://github.com/scrooloose/nerdtree.git $userHomePath/.vim/bundle/nerdtree/"
-git clone https://github.com/scrooloose/nerdtree.git $userHomePath/.vim/bundle/nerdtree/
-echo "git clone https://github.com/gmarik/vundle.git $userHomePath/.vim/bundle/vundle/"
-git clone https://github.com/gmarik/vundle.git $userHomePath/.vim/bundle/vundle/
-echo "git https://github.com/Valloric/YouCompleteMe.git $userHomePath/.vim/bundle/YouCompleteMe/"
-git https://github.com/Valloric/YouCompleteMe.git $userHomePath/.vim/bundle/YouCompleteMe/
-echo "git https://github.com/PythonCharmers/python-future $userHomePath/.vim/bundle/YouCompleteMe/third_party/python-future"
-git https://github.com/PythonCharmers/python-future $userHomePath/.vim/bundle/YouCompleteMe/third_party/python-future
-echo "git https://github.com/ross/requests-futures $userHomePath/.vim/bundle/YouCompleteMe/third_party/requests-futures"
-git https://github.com/ross/requests-futures $userHomePath/.vim/bundle/YouCompleteMe/third_party/requests-futures
-echo "git https://github.com/Valloric/ycmd $userHomePath/.vim/bundle/YouCompleteMe/third_party/ycmd"
-git https://github.com/Valloric/ycmd $userHomePath/.vim/bundle/YouCompleteMe/third_party/ycmd
+echo "git clone https://github.com/davidhalter/jedi.git $USER_HOME_PATH/.vim/bundle/jedi/"
+git clone https://github.com/davidhalter/jedi.git $USER_HOME_PATH/.vim/bundle/jedi/
+echo "git clone https://github.com/scrooloose/nerdtree.git $USER_HOME_PATH/.vim/bundle/nerdtree/"
+git clone https://github.com/scrooloose/nerdtree.git $USER_HOME_PATH/.vim/bundle/nerdtree/
+echo "git clone https://github.com/gmarik/vundle.git $USER_HOME_PATH/.vim/bundle/vundle/"
+git clone https://github.com/gmarik/vundle.git $USER_HOME_PATH/.vim/bundle/vundle/
+echo "git https://github.com/Valloric/YouCompleteMe.git $USER_HOME_PATH/.vim/bundle/YouCompleteMe/"
+git https://github.com/Valloric/YouCompleteMe.git $USER_HOME_PATH/.vim/bundle/YouCompleteMe/
+echo "git https://github.com/PythonCharmers/python-future $USER_HOME_PATH/.vim/bundle/YouCompleteMe/third_party/python-future"
+git https://github.com/PythonCharmers/python-future $USER_HOME_PATH/.vim/bundle/YouCompleteMe/third_party/python-future
+echo "git https://github.com/ross/requests-futures $USER_HOME_PATH/.vim/bundle/YouCompleteMe/third_party/requests-futures"
+git https://github.com/ross/requests-futures $USER_HOME_PATH/.vim/bundle/YouCompleteMe/third_party/requests-futures
+echo "git https://github.com/Valloric/ycmd $USER_HOME_PATH/.vim/bundle/YouCompleteMe/third_party/ycmd"
+git https://github.com/Valloric/ycmd $USER_HOME_PATH/.vim/bundle/YouCompleteMe/third_party/ycmd
 # vim配置覆盖
-echo "sudo cp $basepath/.vimrc $userHomePath/"
-sudo cp $basepath/.vimrc $userHomePath/
+echo "sudo cp $SHELL_PATH/.vimrc $USER_HOME_PATH/"
+sudo cp $SHELL_PATH/.vimrc $USER_HOME_PATH/
 ## 初始化 vim 的时候，解决 YouCompleteMe unavailable: unable to load Python
 echo "初始化 vim 的时候，解决 YouCompleteMe unavailable: unable to load Python"
 echo "sudo apt install vim-gtk"
@@ -75,7 +78,7 @@ echo "linuxbrew安装配置结束"
 
 # java
 echo "java环境配置..."
-sudo cp -r $basepath/.java $userHomePath/
+sudo cp -r $SHELL_PATH/.java $USER_HOME_PATH/
 # jdk 环境配置，可以检查下 ~/.profile
 # echo "JAVA_HOME=~/.java/jdk/jdk1.8.0_231"  >>~/.profile
 # echo "export PATH=\$JAVA_HOME/bin:\$PATH"  >>~/.profile
@@ -97,11 +100,11 @@ gem install jekyll bundler
 
 ## rvm
 # curl -L https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer | bash -s stable
-# cp -r $basepath/.rvm $userHomePath/
+# cp -r $SHELL_PATH/.rvm $USER_HOME_PATH/
 # source ~/.rvm/scripts/rvm
 
 # profile
-sudo cp $basepath/.profile $userHomePath/
+sudo cp $SHELL_PATH/.profile $USER_HOME_PATH/
 
 # snap 安装
 echo "snap安装"
@@ -143,3 +146,4 @@ sudo make clean
 echo "python3 --version"
 python3 --version
 echo "python3 安装结束"
+cd $SHELL_PATH

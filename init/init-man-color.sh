@@ -7,25 +7,28 @@
 #!/bin/bash
 
 # 个人 home 目录
-userHomePath=$(cd `~`; pwd)
-echo "当前用户 home 目录: $userHomePath"
+USER_HOME_PATH=$(cd `~`; pwd)
+echo "当前用户 home 目录: $USER_HOME_PATH"
 # 当前文件所在目录
-basepath=$(cd `dirname $0`; pwd)
-echo "当前 shell 文件目录: $basepath"
+SHELL_PATH=$(cd `dirname $0`; pwd)
+echo "当前 shell 文件目录: $SHELL_PATH"
 
-echo "添加 man 色彩配置到 $userHomePath/.zshrc ..."
-echo "# man 命令配色方案" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_mb=\$'\\E[1m\\E[32m'" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_mh=\$'\\E[2m'" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_mr=\$'\\E[7m'" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_md=\$'\\E[1m\\E[36m'" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_ZW=\"\"" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_us=\$'\\E[4m\\E[1m\\E[37m'" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_me=\$'\\E(B\\E[m'" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_ue=\$'\\E[24m\\E(B\\E[m'" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_ZO=\"\"" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_ZN=\"\"" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_se=\$'\\E[27m\\E(B\\E[m'" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_ZV=\"\"" >> $userHomePath/.zshrc
-echo "export LESS_TERMCAP_so=\$'\\E[1m\\E[33m\\E[44m'" >> $userHomePath/.zshrc
-echo "添加 man 色彩配置到 $userHomePath/.zshrc 完成"
+echo "cd $SHELL_PATH"
+cd $SHELL_PATH
+
+echo "添加 man 色彩配置到 $USER_HOME_PATH/.zshrc ..."
+echo "# man 命令配色方案" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_mb=\$'\\E[1m\\E[32m'" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_mh=\$'\\E[2m'" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_mr=\$'\\E[7m'" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_md=\$'\\E[1m\\E[36m'" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_ZW=\"\"" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_us=\$'\\E[4m\\E[1m\\E[37m'" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_me=\$'\\E(B\\E[m'" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_ue=\$'\\E[24m\\E(B\\E[m'" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_ZO=\"\"" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_ZN=\"\"" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_se=\$'\\E[27m\\E(B\\E[m'" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_ZV=\"\"" >> $USER_HOME_PATH/.zshrc
+echo "export LESS_TERMCAP_so=\$'\\E[1m\\E[33m\\E[44m'" >> $USER_HOME_PATH/.zshrc
+echo "添加 man 色彩配置到 $USER_HOME_PATH/.zshrc 完成"
