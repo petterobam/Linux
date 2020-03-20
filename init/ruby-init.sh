@@ -13,3 +13,22 @@ echo "当前 shell 文件目录: $SHELL_PATH"
 
 echo "cd $SHELL_PATH"
 cd $SHELL_PATH
+
+# ruby 相关环境
+echo "ruby环境安装配置..."
+# rbenv
+echo "brew install rbenv"
+brew install rbenv
+echo "rbenv init"
+rbenv init
+echo "rbenv install --list"
+rbenv install --list
+echo "rbenv install 2.7.0"
+rbenv install 2.7.0
+echo "gem install jekyll bundler"
+gem install jekyll bundler
+
+## rvm
+# curl -L https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer | bash -s stable
+# cp -r $SHELL_PATH/.rvm $USER_HOME_PATH/
+# source ~/.rvm/scripts/rvm
