@@ -45,3 +45,9 @@ echo "开始备份 .profile ..."
 echo "拷贝 .profile 文件：sudo cp $USER_HOME_PATH/.profile $SHELL_PATH"
 sudo cp $USER_HOME_PATH/.profile $SHELL_PATH
 echo "备份 .profile 结束"
+
+# todo.txt 备份
+echo "开始备份 .todo.txt ..."
+echo "cp $USER_HOME_PATH/.todo/config $SHELL_PATH/todo.txt.config"
+cp $USER_HOME_PATH/.todo/config $SHELL_PATH/todo.txt.config
+echo "备份 .todo.txt 结束"

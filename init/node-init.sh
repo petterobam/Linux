@@ -14,32 +14,12 @@ echo "当前 shell 文件目录: $SHELL_PATH"
 echo "cd $SHELL_PATH"
 cd $SHELL_PATH
 
-# 基础工具
-sudo apt-get install build-essential curl file git
-
-## zsh
-sh zsh-init.sh
-
-# profile
-sudo cp $SHELL_PATH/.profile $USER_HOME_PATH/
-
-# vim
-sh vim-init.sh
-
-# linuxbrew
-sh linuxbrew-init.sh
-
-# jdk
-sh jdk-init.sh
-
-# ruby 相关环境
-sh ruby-init.sh
-
-# snap 安装
-sh snap-init.sh
-
-# node 安装
-sh node-init.sh
-
-# python3 安装
-sh python3-init.sh
+# node、npm 安装
+echo "node、npm 安装"
+echo "sudo apt install node"
+sudo apt install node
+# 网站打包应用程序工具安装 https://github.com/jiahaog/nativefier
+echo "网站打包应用程序工具安装 https://github.com/jiahaog/nativefier"
+echo "sudo npm install nativefier -g"
+sudo npm install nativefier -g
+# nativefier --name "AppName"  --icon myicon.icns "http://www.petterobam.cn"

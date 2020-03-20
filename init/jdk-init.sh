@@ -14,32 +14,10 @@ echo "当前 shell 文件目录: $SHELL_PATH"
 echo "cd $SHELL_PATH"
 cd $SHELL_PATH
 
-# 基础工具
-sudo apt-get install build-essential curl file git
-
-## zsh
-sh zsh-init.sh
-
-# profile
-sudo cp $SHELL_PATH/.profile $USER_HOME_PATH/
-
-# vim
-sh vim-init.sh
-
-# linuxbrew
-sh linuxbrew-init.sh
-
-# jdk
-sh jdk-init.sh
-
-# ruby 相关环境
-sh ruby-init.sh
-
-# snap 安装
-sh snap-init.sh
-
-# node 安装
-sh node-init.sh
-
-# python3 安装
-sh python3-init.sh
+# java
+echo "java环境配置..."
+sudo cp -r $SHELL_PATH/.java $USER_HOME_PATH/
+# jdk 环境配置，可以检查下 ~/.profile
+# echo "JAVA_HOME=~/.java/jdk/jdk1.8.0_231"  >>~/.profile
+# echo "export PATH=\$JAVA_HOME/bin:\$PATH"  >>~/.profile
+# echo "export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar"  >>~/.profile

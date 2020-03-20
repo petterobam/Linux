@@ -21,6 +21,6 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 JAVA_HOME=~/.java/jdk/jdk1.8.0_231
-export PATH=$JAVA_HOME/bin:$PATH
+export PATH=$JAVA_HOME/bin:$PATH 
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

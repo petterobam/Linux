@@ -14,32 +14,11 @@ echo "当前 shell 文件目录: $SHELL_PATH"
 echo "cd $SHELL_PATH"
 cd $SHELL_PATH
 
-# 基础工具
-sudo apt-get install build-essential curl file git
-
-## zsh
-sh zsh-init.sh
-
-# profile
-sudo cp $SHELL_PATH/.profile $USER_HOME_PATH/
-
-# vim
-sh vim-init.sh
-
-# linuxbrew
-sh linuxbrew-init.sh
-
-# jdk
-sh jdk-init.sh
-
-# ruby 相关环境
-sh ruby-init.sh
-
 # snap 安装
-sh snap-init.sh
+echo "snap安装"
+echo "sudo apt update"
+sudo apt update
+echo "sudo apt install snapd"
+sudo apt install snapd
 
-# node 安装
-sh node-init.sh
-
-# python3 安装
-sh python3-init.sh
+# github desktop 安装
