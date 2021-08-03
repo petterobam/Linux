@@ -1,6 +1,6 @@
 #!/bin/bash
-# 初始化个人Linux个人空间
-echo "初始化个人Linux个人空间：\n"
+# 初始化个人 Mac 个人空间
+echo "初始化个人 Mac 个人空间：\n"
 echo "1、期间安装软件可能需要输入密码；\n"
 echo "2、期间安装软件请确认是否需要安装；\n"
 
@@ -16,8 +16,9 @@ cd $SHELL_PATH
 
 # vim
 echo "vim配置..."
+mkdir -p $USER_HOME_PATH/.vim/
 echo "sudo cp -r $SHELL_PATH/.vim/ $USER_HOME_PATH/"
-sudo cp -r $SHELL_PATH/.vim/ $USER_HOME_PATH/
+sudo cp -r $SHELL_PATH/.vim/ $USER_HOME_PATH/.vim/
 # bundle 插件检出
 echo "git clone https://github.com/davidhalter/jedi.git $USER_HOME_PATH/.vim/bundle/jedi/"
 git clone https://github.com/davidhalter/jedi.git $USER_HOME_PATH/.vim/bundle/jedi/
@@ -38,5 +39,5 @@ echo "sudo cp $SHELL_PATH/.vimrc $USER_HOME_PATH/"
 sudo cp $SHELL_PATH/.vimrc $USER_HOME_PATH/
 ## 初始化 vim 的时候，解决 YouCompleteMe unavailable: unable to load Python
 echo "初始化 vim 的时候，解决 YouCompleteMe unavailable: unable to load Python"
-echo "sudo apt install vim-gtk"
-sudo apt install vim-gtk
+echo "brew install vim-gtk"
+brew install vim-gtk
